@@ -20,8 +20,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/static/**")
                 .excludePathPatterns("/")
                 .excludePathPatterns("/swagger-ui.html")
+                .excludePathPatterns("/swagger-ui/**")
                 .excludePathPatterns("/swagger-resources/**")
                 .excludePathPatterns("/v2/api-docs")
-                .excludePathPatterns("/webjars/**");
+                .excludePathPatterns("/v2/**")
+                .excludePathPatterns("/webjars/**")
+                .excludePathPatterns("/doc.html")
+                .excludePathPatterns("/csrf");
     }
 }
