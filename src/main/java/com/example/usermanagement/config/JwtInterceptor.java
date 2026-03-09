@@ -14,8 +14,9 @@ public class JwtInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String uri = request.getRequestURI();
         
-        if (uri.contains("swagger") || uri.contains("api-docs") || uri.contains("webjars") 
-            || uri.contains("SWAGGER") || uri.contains("API-DOCS") || uri.contains("WEBJARS")) {
+        if (uri.contains("swagger") || uri.contains("api-docs") || uri.contains("webjars")
+            || uri.startsWith("/auth/login") || uri.startsWith("/auth/register")
+            || uri.startsWith("/v2/") || uri.equals("/") || uri.equals("")) {
             return true;
         }
         
