@@ -20,7 +20,8 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.usermanagement.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .enable(true);
     }
 
     private ApiInfo apiInfo() {
